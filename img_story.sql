@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Дек 22 2015 г., 21:58
+-- Время создания: Дек 24 2015 г., 22:11
 -- Версия сервера: 5.5.45
 -- Версия PHP: 5.4.44
 
@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `category` (
   `parent_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `parent_id` (`parent_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=12 ;
 
 --
 -- Дамп данных таблицы `category`
@@ -43,7 +43,8 @@ INSERT INTO `category` (`id`, `name`, `parent_id`) VALUES
 (7, 'Технологии', NULL),
 (8, 'Собаки', 6),
 (9, 'Веб', 7),
-(10, 'Овчарка', 8);
+(10, 'Овчарка', 8),
+(11, 'Кошки', 6);
 
 -- --------------------------------------------------------
 
@@ -59,7 +60,16 @@ CREATE TABLE IF NOT EXISTS `image` (
   `category_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `category_id` (`category_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
+
+--
+-- Дамп данных таблицы `image`
+--
+
+INSERT INTO `image` (`id`, `title`, `description`, `src`, `category_id`) VALUES
+(1, 'kjhjkhkjh', 'kjhjkhkjh', 'kjhkjhkjh', 8),
+(2, 'sgdgs', 'knjj', 'kpojkpoj', 11),
+(4, 'test', 'test', '/uploads/stavki-na-futbol-559x324.jpg', 11);
 
 -- --------------------------------------------------------
 
