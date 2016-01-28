@@ -25,7 +25,7 @@ class ImgController extends Controller {
         ]);
     }
 
-    public function actionSave(){
+    public function actionSave() {
         $post = Yii::$app->request->post();
 
         $imgs = new Img();
